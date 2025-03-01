@@ -8,22 +8,15 @@ class Solution {
             }
         }
         
-        int i=0, j=0;
-        while(i<n){
-            while(i<n && a[i]!=0){
+        int[] ans = new int[n];
+        int i=0;
+        for(int j: a){
+            if(j!=0){
+                ans[i]=j;
                 i++;
             }
-            j=i;
-            while(j<n && a[j]==0){
-                j++;
-            }
-            if(i<n && j<n){
-                a[i]=a[i]+a[j]-(a[j]=a[i]);
-            }
-            i++;
         }
-
-        return a;
+        return ans;
 
     }
 }
