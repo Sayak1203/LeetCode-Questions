@@ -11,12 +11,11 @@ class Solution {
         char[] c = s.toCharArray();
         int ans=0;
         while(r<=n){
-            while(r<n && !ok(dp)){
+            while(r<n && (dp[0]==0 || dp[1]==0 || dp[2]==0)){
                 dp[c[r]-'a']++;
                 r++;
             }
-            if(ok(dp)){
-                // System.out.println(Arrays.toString(dp));
+            if(!(dp[0]==0 || dp[1]==0 || dp[2]==0)){
                 ans+=n-r+1;
             }
             if(l==n)
