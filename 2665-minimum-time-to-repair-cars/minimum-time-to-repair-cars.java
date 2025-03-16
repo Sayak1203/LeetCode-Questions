@@ -4,7 +4,7 @@ class Solution {
         while(i<n && cars>0){
             long time=0;
             int j=0;
-            while((long)ranks[i]*j*j<=mid){
+            while((long)ranks[i]*j*j<=mid && j<=cars+1){
                 j++;
             }
             cars-=j-1;
