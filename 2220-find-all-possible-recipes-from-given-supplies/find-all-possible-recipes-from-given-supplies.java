@@ -13,6 +13,12 @@ class Solution {
             for(int i=0; i<n; i++){
                 if(vis[i]==true)
                 continue;
+                if(set.contains(r[i])){
+                    ans.add(r[i]);
+                    vis[i]=true;
+                    flag2=1;
+                    continue;
+                }
                 int flag=1;
                 // System.out.println(flag);
                 for(String x: ing.get(i)){
