@@ -25,6 +25,10 @@ class Solution {
             y[i][0]=rec[i][1];
             y[i][1]=rec[i][3];
         }
-        return solve(x)|solve(y);        
+        boolean b= solve(x);
+        if(b==true)
+        return b;
+        b=solve(y);        
+        return b;
     }
 }
