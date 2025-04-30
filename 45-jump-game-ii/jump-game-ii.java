@@ -9,6 +9,8 @@ class Solution {
             for(int j=i; j<=i+dis && j<n; j++){
                 ans[j]=Math.min(ans[j], ans[i]+1);
             }
+            if(ans[n-1]!=(int)1e9)
+            break;
         }
         // System.out.println(Arrays.toString(ans));
         return ans[n-1];
