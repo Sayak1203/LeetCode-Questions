@@ -7,9 +7,9 @@ public:
             mpp[arr[i]]++;
         }
         int maxi=-1;
-        for(int i=1;i<=mpp.size();i++) {
-            if(mpp[i]==i){
-                maxi=max(maxi, i);
+        for(auto it: mpp) {
+            if(it.first==it.second){
+                maxi=max(maxi, it.first);
             }
         }   
         return maxi;
