@@ -5,19 +5,19 @@ class Solution {
         for(int i: nums){
             set.add(i);
         }
-        ArrayList<Integer> ar = new ArrayList<>(set);
-        Collections.sort(ar);
-        int cnt=1; 
-        int cur=ar.get(0);
+        
+        int cnt=0; 
         int max=1;
-        for(int i=1; i<ar.size(); i++){
-            if(ar.get(i)==cur+1){
-                cnt++;
-            }else{
-                cnt=1;
+        for(int i: set){
+            cnt=1;
+            if(!set.contains(i-1)){
+                int cur=i+1;
+                while(set.contains(cur)){
+                    cnt++;
+                    cur++;
+                }
+                max=Math.max(max, cnt);
             }
-            cur=ar.get(i);
-            max=Math.max(max, cnt);
         }
         return max;
     }
