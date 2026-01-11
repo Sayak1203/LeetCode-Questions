@@ -2,10 +2,10 @@ class Solution {
     static int solve(int[] a, boolean buy, int tran, int i, int[][][] dp){
         // System.out.print(i+"-(+") ");
         if(i==a.length) return 0;
-        int buyIdx=(buy?0:1);
         if(tran<0){
             return 0;
         }
+        int buyIdx=(buy?0:1);
         if(dp[i][tran][buyIdx]!=-1) return dp[i][tran][buyIdx];
         if(buy){
             int notTake = solve(a, buy, tran, i+1, dp);
